@@ -17,7 +17,7 @@ def read_root():
     return {"message": "URL Shortener Service is running!"}
 
 @app.post("/shorten")
-@app.post("/shorten")
+@app.post("/shorten/")
 def shorten_url(payload: ShortenRequest, request: Request):
     original_url = payload.url.strip()
     
