@@ -48,7 +48,9 @@ def shorten_url(payload: ShortenRequest, request: Request):
     }
 
 @app.get("/{short_code}")
+
 def redirect_to_original(short_code: str):
     if short_code in url_db:
         return RedirectResponse(url=url_db[short_code])
     raise HTTPException(status_code=404, detail="URL not found")
+    
